@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App_Script</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ac42c3b1f7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container d-felx flex-row">
+          <a class="navbar-brand" href="#">
+            <img
+              src="data:image/png;base64,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"
+              class="logo"
+            />
+           
+          </a>
+          <h1 class="heading"> LOGO</h1> 
+         
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto ml-20px" >
+             
+              <a class="nav-link" href="" id="navItem1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                  </svg>
+              </a>
+              <a class="nav-link" href="" id="navItem2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                  </svg>
+              </a>
+              <a class="nav-link" href="" id="navItem3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-handbag-fill" viewBox="0 0 16 16">
+                    <path d="M8 1a2 2 0 0 0-2 2v2H5V3a3 3 0 1 1 6 0v2h-1V3a2 2 0 0 0-2-2M5 5H3.36a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.355a2.5 2.5 0 0 0 2.473-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5H11v1.5a.5.5 0 0 1-1 0V5H6v1.5a.5.5 0 0 1-1 0z"/>
+                  </svg>
+                  <a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                      </svg>
+                  </a>
+
+                  <a class="nav-link active" id="navItem4" href="#wcuSection">
+                  <span> English</span> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                      </svg>
+                  </a>
+            </div>
+          </div>
+         
+        </div>
+       
+      </nav>
+      <div class="container high-light">
+        <div class="row">
+            <p class="para">SHOP</p>
+            <p class="para" >SKILLS</p>
+            <p class="para" >SKILLS</p>
+            <p class="para">STORIES</p>
+            <p class="para">ABOUT</p>
+            <p class="para">CONTACT US</p>
+
+        </div>
+        
+
+    </div>
+    <div class="d-flex flex-column justify-content-center">
+        <h1 class="main-heading">DISCOVER OUR PRODUCTS</h1>
+        <p class="description">Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus <br/> scelerisque. Dolor intefer scelerisque nibh amet mi ut elementum dolor.</p>
+    </div>
+
+    <div class="d-felx flex-row justify-content-center">
+        <p class="items">3425 ITEMS</p>
+        <div class="d-felx flex-column ">
+
+       
+        <p class="items2">RECOMMENDED 
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <div class="container">
+                 
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ml-auto">
+                      <a class="nav-link active" id="navItem1" href="#wcuSection">
+                       NEWESR FIRST
+                      </a>
+                      <a class="nav-link" href="" id=""> POPULAR</a>
+                      <a class="nav-link" href="" id="">PRICE : HIGH TO LOW</a>
+                      <a class="nav-link" href="" id="">PRICE : LOW TO HIGH </a>
+                    </div>
+                  </div>
+                
+                </div>
+              </nav> </p>
+            </div>
+
+    </div>
+
+    <div class="New-Product-Section pt-5 pb-5" id="">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="NEW-Product-Heading">NEW PRODUCT </h1>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="shadow menu-item-card p-3 mb-3">
+                <img
+                  src="https://i.pinimg.com/564x/33/d4/37/33d4371434b7bcbd07b6df73519165a8.jpg"
+                  class="product-image w-100" alt="Bag"
+                />
+                <p class="product-card-title">FR Fashion Co. 20" Men's Versatile Leather Duffel Bag</p>
+                <p> <a href="" class="product-item-link">
+                    Sign in 
+                    
+                  </a> or Create an account to see pricing
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                  </svg>
+                </p>
+                
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="shadow menu-item-card p-3 mb-3">
+                  <img
+                    src="https://i.pinimg.com/564x/bf/9c/50/bf9c50e5308b4385f0468e37f8e6b558.jpg"
+                    class="product-image w-100" alt="Bag"
+                  />
+                  <p class="product-card-title">Lightweight,Business Casual Quilted Tassel Decor Square Bag For Teen Girls </p>
+                  <p> <a href="" class="product-item-link">
+                      Sign in 
+                      
+                    </a> or Create an account to see pricing
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                      <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                    </svg>
+                  </p>
+                  
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="shadow menu-item-card p-3 mb-3">
+                  <img
+                    src="https://i.pinimg.com/564x/51/a0/c8/51a0c81fc856e72bee3bcdbc8227c77c.jpg"
+                    class="product-image w-100" alt="Bag"
+                  />
+                  <p class="product-card-title">Crocodile Embossed Shoulder Tote Bag</p>
+                  <p> <a href="" class="product-item-link">
+                      Sign in 
+                      
+                    </a> or Create an account to see pricing
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                      <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                    </svg>
+                  </p>
+                  
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="shadow menu-item-card p-3 mb-3">
+                  <img
+                    src="https://i.pinimg.com/564x/65/01/15/650115df1435706b6a34192113b6f208.jpg"
+                    class="product-image w-100" alt="Bag"
+                  />
+                  <p class="product-card-title">Designer Handbags for Women Canvas Fashion Shoulder Crossbody </p>
+                  <p> <a href="" class="product-item-link">
+                      Sign in 
+                      
+                    </a> or Create an account to see pricing
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                      <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                    </svg>
+                  </p>
+                  
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="shadow menu-item-card p-3 mb-3">
+                  <img
+                    src="https://i.pinimg.com/564x/5c/f3/9a/5cf39a22e7a2eb9f0b42a527ab317c86.jpg"
+                    class="product-image w-100" alt="Bag"
+                  />
+                  <p class="product-card-title">Mongw Quality Famous Brand</p>
+                  <p> <a href="" class="product-item-link">
+                      Sign in 
+                      
+                    </a> or Create an account to see pricing
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                      <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                    </svg>
+                  </p>
+                  
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="shadow menu-item-card p-3 mb-3">
+                  <img
+                    src="https://i.pinimg.com/564x/b4/4e/73/b44e73c705e2e3620b1a7d968a112b66.jpg"
+                    class="product-image w-100" alt="Bag"
+                  />
+                  <p class="product-card-title">Bow Decor Square Bag</p>
+                  <p> <a href="" class="product-item-link">
+                      Sign in 
+                      
+                    </a> or Create an account to see pricing
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                      <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                    </svg>
+                  </p>
+                  
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="shadow menu-item-card p-3 mb-3">
+                  <img
+                    src="https://i.pinimg.com/564x/e0/7f/a1/e07fa13beb5e3d54b2899225e3c9ce76.jpg"
+                    class="product-image w-100" alt="Bag"
+                  />
+                  <p class="product-card-title">Women Solid Multi-Pocket Commuter Satchel Crossbody Bag Shoulder Bag Handbag - Brown</p>
+                  <p> <a href="" class="product-item-link">
+                      Sign in 
+                      
+                    </a> or Create an account to see pricing
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                      <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                    </svg>
+                  </p>
+                  
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="shadow menu-item-card p-3 mb-3">
+                  <img
+                    src="https://i.pinimg.com/564x/e7/80/40/e780406ccab965f2ff2442985acbbc97.jpg"
+                    class="product-image w-100" alt="Bag"
+                  />
+                  <p class="product-card-title">2 Main Pockets Women PU Leather Casual Handbag Crossbody Bag </p>
+                  <p> <a href="" class="product-item-link">
+                      Sign in 
+                      
+                    </a> or Create an account to see pricing
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                      <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                    </svg>
+                  </p>
+                  
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-info-section pt-5 pb-5">
+        <div class="continer">
+            <div class="row">
+                <div class="d-flex flex-column">
+                    <h1 class="footer-info-section-heading">BE THE FIRST TO KNOW</h1>
+                    <P class="footer-info-section-para">Sign up for updates for metta muse</P>
+                    <div class="input-container d-felx flex-row">
+                        <input type="text" placeholder="Enter your e-mail.."  />
+                        <button class="subscribe-btn">SUBSCRIBE</button>
+
+                    </div>
+                    
+                  
+                </div>
+               
+                        <div class="d-felx flex-column justify-content-end contact">
+                            <p class="contact-para">CONTACT US</p>
+                            <li class="list-components">
+                                <ul>
+                                    +44 221 324 564 <br/>
+                                    customercare@mettamuse.com
+                                </ul>
+                            </li>
+                            <p class="contact-para">CURRENCY</p>
+                            <li  class="list-components">
+                                <ul>
+                                    USD <br/>
+                                    Transactions will be completed in Euros and a currency reference is available on hover.
+                                </ul>
+                            </li>
+                       
+                </div>
+                <u>
+
+                </u>
+
+                
+                
+            </div>
+        </div>
+        
+
+      </div>
+     
+      
+       
+    <div class="d-felx flex-column">
+        <div class="footer-info-section pt-5 pb-5">
+            <div class="continer">
+                <div class="row">
+                    <div class="d-flex flex-column">
+                        <p class="footer-info-section-heading">metta muse</p>
+                        <P class="footer-info-section-para">About Us</P>
+                        <P class="footer-info-section-para">Stories </P>
+                        <P class="footer-info-section-para">Artisans</P>
+                        <P class="footer-info-section-para">Boutiques </P>
+                        <P class="footer-info-section-para">Contact Us</P>
+                        <P class="footer-info-section-para"> EU Complinances Docs</P>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="d-felx flex-column">
+
+       
+            <div class="continer ">
+                <div class="row">
+                    <div class="d-flex flex-column justify-content-end">
+                        <p class="footer-info-section-heading">metta muse</p>
+                        <P class="footer-info-section-para">About Us</P>
+                        <P class="footer-info-section-para">Stories </P>
+                        <P class="footer-info-section-para">Artisans</P>
+                        <P class="footer-info-section-para">Boutiques </P>
+                        <P class="footer-info-section-para">Contact Us</P>
+                        <P class="footer-info-section-para"> EU Complinances Docs</P>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="footer-info-section-heading">metta muse</p>
+                        <P class="footer-info-section-para">About Us</P>
+                        <P class="footer-info-section-para">Stories </P>
+                        <P class="footer-info-section-para">Artisans</P>
+                        <P class="footer-info-section-para">Boutiques </P>
+                        <P class="footer-info-section-para">Contact Us</P>
+                        <P class="footer-info-section-para"> EU Complinances Docs</P>
+            </div>
+
+
+        </div>
+    </div>
+    
+
+
+        
+
+
+    
+       
+
+
+
+        
+
+       
+   
+
+      
+
+</body>
+</html>

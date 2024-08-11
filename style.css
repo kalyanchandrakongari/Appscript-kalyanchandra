@@ -1,0 +1,105 @@
+.logo{
+    height: 80px;
+    width: 75px;
+}
+.heading{
+    text-align: center;
+    color:black;
+    font-weight: bold;
+    margin-left: 500px;
+}
+.hight-light{
+    display: felx;
+    flex-direction: column;
+    justify-content: center;
+    margin: 200px;
+}
+.para{
+    margin:10px;
+    font-family: Simplon Norm;
+    font-weight: 700;
+}
+.main-heading{
+    color:black;
+    font-weight: 400;
+    margin-left: 500px;
+
+}
+.description{
+    color:black;
+    font-weight: 400;
+    margin-left: 500px;
+}
+.items{
+    font-weight: bold;
+    text-align: start;
+    margin-left: 100px;
+}
+.items2{
+    font-weight: bold;
+    text-align: end;
+    margin-right: 100px;
+}
+.NEW-Product-Heading{
+    width: 130px;
+    height: 40;
+}
+.product-image{
+    border-radius: 20px;
+}
+.product-card-title {
+    color: #323f4b;
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 24px;
+  }
+  .product-item-link{
+    color:rgb(104, 8, 66);
+  }
+  .footer-info-section{
+    background-color: black;
+    
+  }
+  .footer-info-section-heading{
+    color:#ffffff;
+    height: 24px;
+    font-size: 28px;
+    font-weight: 750px;
+    padding-left: 220px;
+    font-family: "Simplon Norm";
+
+  }
+  .footer-info-section-para{
+    color:#ffffff;
+    height: 20px;
+    font-size: 18px;
+    font-weight: 750px;
+    padding-left: 220px;
+    font-family: "Simplon Norm";
+  }
+  .input-container{
+    height: 47px fixed;
+    width: 348px fixed;
+    margin-left: 200px;
+    padding: 
+    14px, 24px, 14px, 24px;
+    
+  }
+  .subscribe-btn{
+    background-color: black;
+    color: grey;
+    border-radius: 5px;
+  }
+  .contact{
+    margin-left: 500px;
+  }
+  .contact-para{
+    color:#ffffff;
+    font-family: Roboto;
+    font-size: 20px;
+  }
+  .list-components{
+    color:#ffffff;
+    
+  }
